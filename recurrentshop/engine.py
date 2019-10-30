@@ -3,9 +3,9 @@ from keras.models import Model
 from keras import initializers
 from .backend import rnn, learning_phase_scope
 from .generic_utils import serialize_function, deserialize_function
-from keras.engine.topology import Node, _collect_previous_mask, _collect_input_shape
+from keras.engine.base_layer import Node, _collect_previous_mask, _collect_input_shape
 import inspect
-
+import keras.backend as K
 
 def _to_list(x):
     if type(x) is not list:
